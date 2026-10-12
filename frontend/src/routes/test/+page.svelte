@@ -14,12 +14,16 @@
         id++;
     }
 
+    function removeResourve(id: number) {
+        delete resources[id];
+    }
+
 </script>
 
 <main class="max-w-full p-8">
-    <h1 class="mx-auto max-w-1/2 mb-3 text-5xl font-bold">BriefBoard</h1>
+    <h1 class="mx-auto lg:max-w-1/2 mb-3 text-5xl font-bold">BriefBoard</h1>
 
-    <Card.Root class="mx-auto max-w-1/2">
+    <Card.Root class="mx-auto lg:max-w-1/2">
         <Card.Header>
             <Card.Title>Team Knowledge Base</Card.Title>
             <Card.Description>
@@ -51,6 +55,7 @@
                     <div class="flex items-center justify-between rounded-lg border p-4">
                         <span>{resource}</span>
                         <Badge variant="secondary">New</Badge>
+                        <Button onclick={() => {removeResourve(+id)}}>Delete</Button>
                     </div>
                 </div>
             </Card.Content>
